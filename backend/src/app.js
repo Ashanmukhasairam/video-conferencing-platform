@@ -28,6 +28,10 @@ app.get("/home", (req, res) => {
   res.json({ message: "Hello from the server!" });
 });
 
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to the server!" });
+});
+
 const start = async () => {
   const connectionDB = await mongoose.connect(process.env.MONGO_URL);
   console.log(`MonggoDB connected: ${connectionDB.connection.host}`);
